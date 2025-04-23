@@ -40,7 +40,8 @@ if (process.env.NODE_ENV === "production") {
 //--------DEPLOYMENT---------
 
 
-let port_no = process.env.PORT;
+const port_no = process.env.PORT || 3001;
+
 
 server.listen(port_no, () => {
   console.log(`Example app listening on ${port_no}`);
