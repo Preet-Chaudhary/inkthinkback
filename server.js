@@ -19,7 +19,8 @@ const io = new Server(server, {
 
 app.use(cors());
 app.use(express.json());  
-dotenv.config({path:'../.env'});
+dotenv.config(); // ✅ loads .env from current directory (backend)
+
 
 
 
@@ -42,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
 let port_no = process.env.PORT;
 
 server.listen(port_no, () => {
-  console.log(`Example app listening on port 3001`);
+  console.log(`Example app listening on ${port_no}`);
 });
 
 
